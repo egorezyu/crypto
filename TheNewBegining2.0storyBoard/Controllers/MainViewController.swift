@@ -25,6 +25,7 @@ class MainViewController: UIViewController {
         setConstraints()
         setCoinNames()
         print("faf")
+        print("def")
         
         
         
