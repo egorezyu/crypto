@@ -21,6 +21,8 @@
 		E47D7DCA282C08C800A7C871 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D7DC9282C08C800A7C871 /* NetworkManager.swift */; };
 		E47D7DCD282C0B1500A7C871 /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D7DCC282C0B1500A7C871 /* Coin.swift */; };
 		E47D7DD1282D057500A7C871 /* CryptoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D7DD0282D057500A7C871 /* CryptoCell.swift */; };
+		E4CC0FAF286B675E007B190B /* CoinDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC0FAE286B675E007B190B /* CoinDetailModel.swift */; };
+		E4CC0FB1286B677F007B190B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC0FB0286B677F007B190B /* String.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		E47D7DC9282C08C800A7C871 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E47D7DCC282C0B1500A7C871 /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		E47D7DD0282D057500A7C871 /* CryptoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCell.swift; sourceTree = "<group>"; };
+		E4CC0FAE286B675E007B190B /* CoinDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailModel.swift; sourceTree = "<group>"; };
+		E4CC0FB0286B677F007B190B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +63,7 @@
 				E466A23D2854ED1F00CA66DE /* Double.swift */,
 				E47BF47728579275008CA983 /* UIColorExt.swift */,
 				E47BF4792859F735008CA983 /* Date.swift */,
+				E4CC0FB0286B677F007B190B /* String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				E47D7DCC282C0B1500A7C871 /* Coin.swift */,
+				E4CC0FAE286B675E007B190B /* CoinDetailModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -221,6 +227,8 @@
 				E47D7DB9282832FD00A7C871 /* MainViewController.swift in Sources */,
 				E466A246285661DA00CA66DE /* Graphic.swift in Sources */,
 				E47D7DD1282D057500A7C871 /* CryptoCell.swift in Sources */,
+				E4CC0FB1286B677F007B190B /* String.swift in Sources */,
+				E4CC0FAF286B675E007B190B /* CoinDetailModel.swift in Sources */,
 				E47D7DB5282832FD00A7C871 /* AppDelegate.swift in Sources */,
 				E466A244285650DA00CA66DE /* CoinScreenViewController.swift in Sources */,
 				E47D7DCD282C0B1500A7C871 /* Coin.swift in Sources */,

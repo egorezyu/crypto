@@ -141,6 +141,25 @@ class NetworkManager{
         })
         
     }
+    func getAdditionalInfoAboutCoin(coin : Coin) async throws -> CoinDetailModel?{
+        guard let url = URL(string: "https://api.coingecko.com/api/v3/coins/\(coin.id)?localization=false&tickers=false&market_data=false&community_data=false&developer_data=false&sparkline=false") else{throw GetDataFromCoinGeckoError.invalidUrl}
+        let (data,response) = try await URLSession.shared.data(from: url, delegate: nil)
+        guard let response = response as? HTTPURLResponse,
+              response.statusCode >= 200 && response.statusCode < 300 else{
+                  throw GetDataFromCoinGeckoError.badResponse
+              }
+        do{
+            let result = try JSONDecoder().decode(CoinDetailModel.self,from : data)
+            return result
+           
+            
+            
+        }
+        catch{
+            return nil
+        }
+        
+    }
     
     
 }

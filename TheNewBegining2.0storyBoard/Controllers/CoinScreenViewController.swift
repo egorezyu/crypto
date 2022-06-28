@@ -21,6 +21,7 @@ class CoinScreenViewController: UIViewController {
     private var date1 = UILabel()
     private var date2 = UILabel()
     private var overViewLabel = UILabel()
+    private let labelDis = UITextView()
     
     
     private var formatter : DateFormatter {
@@ -34,6 +35,7 @@ class CoinScreenViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         self.slider = UISlider()
         self.currentPrice = UILabel()
         name.font = UIFont.boldSystemFont(ofSize: 20.0)
@@ -147,7 +149,22 @@ class CoinScreenViewController: UIViewController {
 //        
     }
     func setAdditionalInfo(){
+        
+        
+//        labelDis.lineBreakMode = .byWordWrapping
+    
+        
+        
         let priceLabel = UILabel()
+//        labelDis.lineBreakMode = .byWordWrapping
+      
+        labelDis.isEditable = false
+//        labelDis.isScrollEnabled = false
+        
+        labelDis.font = UIFont.systemFont(ofSize: 20)
+        labelDis.backgroundColor = UIColor.backForCoin
+        
+       
         priceLabel.font = UIFont.boldSystemFont(ofSize: 20)
         priceLabel.text = "Current price is " + coin.currentPrice.format()
         let priceChanged = UILabel()
@@ -161,10 +178,57 @@ class CoinScreenViewController: UIViewController {
         stack.alignment = .leading
         stack.addArrangedSubview(priceLabel)
         stack.addArrangedSubview(priceChanged)
+//        stack.addArrangedSubview(labelDis)
         view.addSubview(stack)
+        view.addSubview(labelDis)
+//        scroll.addSubview(stack)
+//        view.addSubview(scroll)
+//        let constraints = [ stack.topAnchor.constraint(equalTo: scroll.topAnchor),
+//                            stack.leadingAnchor.constraint(equalTo: scroll.leadingAnchor),
+//                            stack.trailingAnchor.constraint(equalTo: scroll.trailingAnchor),
+//                            stack.bottomAnchor.constraint(equalTo: scroll.bottomAnchor),
+//                            stack.widthAnchor.constraint(equalTo: scroll.widthAnchor)
+//
+//
+//                            ]
+//
+//
+//
+//
+//
+//        NSLayoutConstraint.activate(constraints)
+//        scroll.translatesAutoresizingMaskIntoConstraints = false
+//        scroll.topAnchor.constraint(equalTo: overViewLabel.bottomAnchor,constant: 20).isActive = true
+//        scroll.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20).isActive = true
+//        scroll.heightAnchor.constraint(equalToConstant: 200).isActive = true
+//        scroll.widthAnchor.constraint(equalToConstant: 300).isActive = true
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.topAnchor.constraint(equalTo: overViewLabel.bottomAnchor,constant: 20).isActive = true
         stack.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20).isActive = true
+        labelDis.translatesAutoresizingMaskIntoConstraints = false
+        labelDis.topAnchor.constraint(equalTo: stack.bottomAnchor,constant: 20).isActive = true
+        labelDis.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        labelDis.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+        labelDis.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
+        
+        
+        
+       
+        
+        Task{
+            do{
+                let description = try await NetworkManager.netWork.getAdditionalInfoAboutCoin(coin: coin)
+                await MainActor.run {
+                    self.labelDis.text = description?.readableDescription ?? ""
+                    
+                }
+               
+            }
+            catch{
+                print(error)
+            }
+            
+        }
         
     }
     @objc func sliderValueDidChange(_ sender: UISlider){
