@@ -22,6 +22,7 @@ class CoinScreenViewController: UIViewController {
     private var date2 = UILabel()
     private var overViewLabel = UILabel()
     
+    
     private var formatter : DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM-dd-yyyy"
@@ -38,6 +39,7 @@ class CoinScreenViewController: UIViewController {
         name.font = UIFont.boldSystemFont(ofSize: 20.0)
         overViewLabel.font = UIFont.boldSystemFont(ofSize: 30)
         self.overViewLabel.text = "Overview".uppercased()
+        
        
         
         
@@ -128,6 +130,8 @@ class CoinScreenViewController: UIViewController {
         name.translatesAutoresizingMaskIntoConstraints = false
         name.topAnchor.constraint(equalTo: currentPrice.topAnchor,constant: -20).isActive = true
         name.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        setAdditionalInfo()
+        
         
         
 
@@ -141,6 +145,27 @@ class CoinScreenViewController: UIViewController {
 //        stackView.addArrangedSubview(costLabel)
 //        stackView.addArrangedSubview(priceChangeLabel)
 //        
+    }
+    func setAdditionalInfo(){
+        let priceLabel = UILabel()
+        priceLabel.font = UIFont.boldSystemFont(ofSize: 20)
+        priceLabel.text = "Current price is " + coin.currentPrice.format()
+        let priceChanged = UILabel()
+        priceChanged.font = UIFont.boldSystemFont(ofSize: 20)
+        priceChanged.text = "Price has changed " + (coin.priceChange24H ?? 0).format()
+        priceChanged.textColor = coin.priceChange24H ?? 0 > 0 ? .green : .red
+        let stack = UIStackView()
+        stack.axis = .vertical
+        stack.distribution = .fillEqually
+        stack.spacing = 10
+        stack.alignment = .leading
+        stack.addArrangedSubview(priceLabel)
+        stack.addArrangedSubview(priceChanged)
+        view.addSubview(stack)
+        stack.translatesAutoresizingMaskIntoConstraints = false
+        stack.topAnchor.constraint(equalTo: overViewLabel.bottomAnchor,constant: 20).isActive = true
+        stack.leadingAnchor.constraint(equalTo: view.leadingAnchor,constant: 20).isActive = true
+        
     }
     @objc func sliderValueDidChange(_ sender: UISlider){
 
