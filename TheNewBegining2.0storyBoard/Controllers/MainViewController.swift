@@ -24,8 +24,7 @@ class MainViewController: UIViewController {
         tableView.register(CryptoCell.self, forCellReuseIdentifier: "TableViewCell")
         setConstraints()
         setCoinNames()
-        print("faf")
-        print("def")
+        
         
         
         
