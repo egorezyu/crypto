@@ -30,6 +30,7 @@ class CoinChooseView: UIControl {
         self.coin = coin
         let label = UILabel()
         label.text = self.coin.name
+        label.font = UIFont.boldSystemFont(ofSize: 10)
 
         self.addSubview(label)
         self.addSubview(self.imageView)

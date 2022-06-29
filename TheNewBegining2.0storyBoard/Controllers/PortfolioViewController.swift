@@ -13,7 +13,9 @@ class PortfolioViewController: UIViewController {
     var arrOfCoinChoseViews : [CoinChooseView] = []
     private var currentChose = ""
     private var textFieldForAmount : UITextField = UITextField()
+    private var textFieldForFiltering : UITextField = UITextField()
     private var addCoinButton : UIButton = UIButton()
+    private var stack : UIStackView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,16 @@ class PortfolioViewController: UIViewController {
         addCoinButton.layer.cornerRadius = 15
         addCoinButton.isHidden = true
         view.addSubview(addCoinButton)
+        textFieldForFiltering.placeholder = "Please enter the name of the currency"
+        textFieldForFiltering.font = UIFont.boldSystemFont(ofSize: 20)
+        textFieldForFiltering.textAlignment = .center
+        textFieldForFiltering.backgroundColor = .back
+        textFieldForFiltering.layer.cornerRadius = 20
+        textFieldForFiltering.layer.borderColor = UIColor.cyan.cgColor
+        textFieldForFiltering.layer.borderWidth = 3
+        textFieldForFiltering.addTarget(self, action: #selector(filter(_:)), for: .allEditingEvents)
+        
+        view.addSubview(textFieldForFiltering)
         
         
         
@@ -52,7 +64,7 @@ class PortfolioViewController: UIViewController {
         let scroll = UIScrollView()
         view.addSubview(scroll)
         scroll.translatesAutoresizingMaskIntoConstraints = false
-        scroll.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor).isActive = true
+        scroll.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor,constant: view.frame.width * 0.2).isActive = true
         scroll.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor).isActive = true
         scroll.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor).isActive = true
         scroll.heightAnchor.constraint(equalToConstant: view.frame.width * 0.3).isActive = true
@@ -61,10 +73,16 @@ class PortfolioViewController: UIViewController {
         textFieldForAmount.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         textFieldForAmount.widthAnchor.constraint(equalToConstant: view.frame.width * 0.7).isActive = true
         textFieldForAmount.heightAnchor.constraint(equalToConstant: view.frame.width * 0.1).isActive = true
+        
+        textFieldForFiltering.translatesAutoresizingMaskIntoConstraints = false
+        textFieldForFiltering.topAnchor.constraint(equalTo: scroll.topAnchor,constant: -view.frame.width * 0.15).isActive = true
+        textFieldForFiltering.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        textFieldForFiltering.widthAnchor.constraint(equalToConstant: view.frame.width * 0.9).isActive = true
+        textFieldForFiltering.heightAnchor.constraint(equalToConstant: view.frame.width * 0.1).isActive = true
         addCoinButton.translatesAutoresizingMaskIntoConstraints = false
         addCoinButton.topAnchor.constraint(equalTo: textFieldForAmount.bottomAnchor,constant: 30).isActive = true
         addCoinButton.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        let stack = UIStackView()
+        stack = UIStackView()
         scroll.addSubview(stack)
         stack.translatesAutoresizingMaskIntoConstraints = false
         stack.topAnchor.constraint(equalTo: scroll.topAnchor).isActive = true
@@ -77,7 +95,7 @@ class PortfolioViewController: UIViewController {
         for i in coins.indices {
             let coinChose : CoinChooseView
             
-            if (i <= images.count - 1 ){
+            if (i <= images.count - 1){
                 coinChose = CoinChooseView(frame: .zero, coin: coins[i], image: UIImageView(image: images[i]))
                 
                 
@@ -147,6 +165,31 @@ class PortfolioViewController: UIViewController {
         }
         else{
             addCoinButton.isHidden = true
+        }
+        
+    }
+    @objc func filter(_ sender : UITextField){
+        if let text = sender.text,!text.isEmpty{
+            let sortedArray = arrOfCoinChoseViews.filter { coinView in
+                coinView.coin.name.contains(text)
+            }
+            print(coins.indices)
+            
+            for i in 0...coins.count - 1{
+                stack.removeArrangedSubview(arrOfCoinChoseViews[i])
+                arrOfCoinChoseViews[i].removeFromSuperview()
+            }
+            for coinView in sortedArray{
+                stack.addArrangedSubview(coinView)
+            }
+            
+            
+        }
+        else{
+            for i in coins.indices{
+                stack.addArrangedSubview(arrOfCoinChoseViews[i])
+            }
+            
         }
         
     }

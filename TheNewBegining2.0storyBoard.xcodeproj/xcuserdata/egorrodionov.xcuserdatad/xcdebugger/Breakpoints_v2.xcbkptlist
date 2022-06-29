@@ -281,8 +281,8 @@
             filePath = "TheNewBegining2.0storyBoard/View/CoinChooseView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
             landmarkName = "init(frame:coin:image:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -297,9 +297,106 @@
             filePath = "TheNewBegining2.0storyBoard/Controllers/PortfolioViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "135"
+            endingLineNumber = "135"
             landmarkName = "onClickEvent(sender:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "968492A9-317C-492D-AA59-25C443EDA6AF"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheNewBegining2.0storyBoard/Controllers/PortfolioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "filter(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "968492A9-317C-492D-AA59-25C443EDA6AF - ee21eb8091c59df5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheNewBegining2_0storyBoard.PortfolioViewController.filter(__C.UITextField) -&gt; ()"
+                  moduleName = "TheNewBegining2.0storyBoard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/egorrodionov/Desktop/swift/TheNewBegining2.0storyBoard/TheNewBegining2.0storyBoard/Controllers/PortfolioViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "64">
+               </Location>
+               <Location
+                  uuid = "968492A9-317C-492D-AA59-25C443EDA6AF - ee21eb8091c59df5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "TheNewBegining2_0storyBoard.PortfolioViewController.filter(__C.UITextField) -&gt; ()"
+                  moduleName = "TheNewBegining2.0storyBoard"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/egorrodionov/Desktop/swift/TheNewBegining2.0storyBoard/TheNewBegining2.0storyBoard/Controllers/PortfolioViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "172"
+                  endingLineNumber = "172"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3A26905D-4646-4814-B6F7-1500184A1D4D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheNewBegining2.0storyBoard/Controllers/PortfolioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
+            landmarkName = "filter(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F151B0AC-3823-4103-B50B-8F7037C8434A"
+            shouldBeEnabled = "No"
+            condition = "i == 249"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheNewBegining2.0storyBoard/Controllers/PortfolioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "178"
+            endingLineNumber = "178"
+            landmarkName = "filter(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "1E27C20D-38B8-4ACA-8526-B1E20E716C30"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TheNewBegining2.0storyBoard/Controllers/PortfolioViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "filter(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
