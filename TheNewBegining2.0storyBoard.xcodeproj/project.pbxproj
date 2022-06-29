@@ -23,6 +23,7 @@
 		E47D7DD1282D057500A7C871 /* CryptoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E47D7DD0282D057500A7C871 /* CryptoCell.swift */; };
 		E4CC0FAF286B675E007B190B /* CoinDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC0FAE286B675E007B190B /* CoinDetailModel.swift */; };
 		E4CC0FB1286B677F007B190B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC0FB0286B677F007B190B /* String.swift */; };
+		E4CC0FB3286C9071007B190B /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC0FB2286C9071007B190B /* PortfolioViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		E47D7DD0282D057500A7C871 /* CryptoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoCell.swift; sourceTree = "<group>"; };
 		E4CC0FAE286B675E007B190B /* CoinDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailModel.swift; sourceTree = "<group>"; };
 		E4CC0FB0286B677F007B190B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		E4CC0FB2286C9071007B190B /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				E47D7DB8282832FD00A7C871 /* MainViewController.swift */,
 				E466A243285650DA00CA66DE /* CoinScreenViewController.swift */,
+				E4CC0FB2286C9071007B190B /* PortfolioViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E47D7DCA282C08C800A7C871 /* NetworkManager.swift in Sources */,
+				E4CC0FB3286C9071007B190B /* PortfolioViewController.swift in Sources */,
 				E47D7DB9282832FD00A7C871 /* MainViewController.swift in Sources */,
 				E466A246285661DA00CA66DE /* Graphic.swift in Sources */,
 				E47D7DD1282D057500A7C871 /* CryptoCell.swift in Sources */,

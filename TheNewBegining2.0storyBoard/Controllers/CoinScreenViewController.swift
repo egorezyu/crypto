@@ -31,6 +31,7 @@ class CoinScreenViewController: UIViewController {
         
     }
     
+    
 
     override func viewDidLoad() {
         
@@ -133,6 +134,7 @@ class CoinScreenViewController: UIViewController {
         name.topAnchor.constraint(equalTo: currentPrice.topAnchor,constant: -20).isActive = true
         name.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
         setAdditionalInfo()
+    
         
         
         
@@ -148,6 +150,7 @@ class CoinScreenViewController: UIViewController {
 //        stackView.addArrangedSubview(priceChangeLabel)
 //        
     }
+    
     func setAdditionalInfo(){
         
         
@@ -231,6 +234,7 @@ class CoinScreenViewController: UIViewController {
         }
         
     }
+    
     @objc func sliderValueDidChange(_ sender: UISlider){
 
         let currentValue = slider.value

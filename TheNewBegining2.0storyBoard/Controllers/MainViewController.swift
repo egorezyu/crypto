@@ -11,6 +11,7 @@ class MainViewController: UIViewController {
     private let tableView = UITableView(frame: .zero, style: .grouped)
     private var coins : [Coin] = []
     private var images : [UIImage] = []
+    private let buttonToHold = UIButton()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,7 @@ class MainViewController: UIViewController {
         tableView.register(CryptoCell.self, forCellReuseIdentifier: "TableViewCell")
         setConstraints()
         setCoinNames()
+        addButtonToNavBar()
         
         
         
@@ -34,10 +36,49 @@ class MainViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        buttonToHold.isHidden = false
+        
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        buttonToHold.isHidden = true
+        
+    }
     private func configureTabBar(){
         
         self.navigationItem.title = "Crypto"
         self.navigationController?.navigationBar.prefersLargeTitles = true
+        
+    }
+    func addButtonToNavBar(){
+       
+        buttonToHold.setTitle("Portfolio", for: .normal)
+        
+        buttonToHold.setTitleColor(.cyan, for: .normal)
+        buttonToHold.titleLabel?.font = UIFont.boldSystemFont(ofSize: 25)
+        if let navB = navigationController?.navigationBar{
+            navB.addSubview(buttonToHold)
+            buttonToHold.translatesAutoresizingMaskIntoConstraints = false
+            buttonToHold.bottomAnchor.constraint(equalTo: navB.bottomAnchor,constant: 3).isActive = true
+            buttonToHold.rightAnchor.constraint(equalTo: navB.rightAnchor,constant: -5).isActive = true
+            
+        }
+        buttonToHold.addTarget(self, action: #selector(doNavigationToPort(_:)), for: .touchUpInside)
+            
+        
+       
+        
+    }
+    @objc func doNavigationToPort(_ sender : UIButton){
+        let pViewController = PortfolioViewController()
+        pViewController.coins = self.coins
+        pViewController.images = self.images
+        
+
+        navigationController?.pushViewController(pViewController, animated: true)
+        
         
     }
     private func setConstraints(){
