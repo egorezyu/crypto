@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTabBar()
+        
         self.view.backgroundColor = UIColor.back
         
         tableView.dataSource = self
@@ -24,8 +25,9 @@ class MainViewController: UIViewController {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.register(CryptoCell.self, forCellReuseIdentifier: "TableViewCell")
         setConstraints()
-        setCoinNames()
         addButtonToNavBar()
+        setCoinNames()
+        
         
         
         
@@ -53,6 +55,8 @@ class MainViewController: UIViewController {
         
     }
     func addButtonToNavBar(){
+        buttonToHold.isUserInteractionEnabled = false
+        
        
         buttonToHold.setTitle("Portfolio", for: .normal)
         
@@ -105,6 +109,7 @@ class MainViewController: UIViewController {
                 self.coins = result
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
+                    self.buttonToHold.isUserInteractionEnabled = true
                 }
                 for i in 0...(result.count - 1) {
                     images.append(try await NetworkManager.netWork.getImageFromCoin(coin: result[i]))
