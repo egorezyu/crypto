@@ -146,6 +146,10 @@ class PortfolioViewController: UIViewController {
             let chosenPrevElement = arrOfCoinChoseViews.first { coinChoseView in
                 coinChoseView.coin.name == currentChose
             }
+            
+            if let chosenPrevElement = chosenPrevElement,let text = textFieldForFiltering.text,!text.isEmpty,!chosenPrevElement.coin.name.contains(text){
+                stack.removeArrangedSubview(chosenPrevElement)
+            }
             chosenPrevElement?.clearBorder()
             currentChose = sender.coin.name
             let chosenElement = arrOfCoinChoseViews.first { coinChoseView in
@@ -178,6 +182,12 @@ class PortfolioViewController: UIViewController {
             for i in 0...coins.count - 1{
                 stack.removeArrangedSubview(arrOfCoinChoseViews[i])
                 arrOfCoinChoseViews[i].removeFromSuperview()
+            }
+            let chosenCoin = arrOfCoinChoseViews.first { coin in
+                coin.coin.name == currentChose
+            }
+            if let chosenCoin = chosenCoin {
+                stack.addArrangedSubview(chosenCoin)
             }
             for coinView in sortedArray{
                 stack.addArrangedSubview(coinView)
