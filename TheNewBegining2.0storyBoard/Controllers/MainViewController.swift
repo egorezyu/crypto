@@ -79,9 +79,23 @@ class MainViewController: UIViewController {
         let pViewController = PortfolioViewController()
         pViewController.coins = self.coins
         pViewController.images = self.images
+        pViewController.title = "Add"
+        
+        pViewController.tabBarItem.image = UIImage(systemName: "plus")
+        
+        let cont = UIViewController()
+        cont.title = "Home"
+        cont.tabBarItem.image = UIImage(systemName: "house")
+        let tabBar = UITabBarController()
+        tabBar.tabBar.backgroundColor = .backForTabColor
+        tabBar.tabBar.layer.cornerRadius = 25
+        
+        tabBar.setViewControllers([pViewController,cont], animated: false)
+        tabBar.modalPresentationStyle = .fullScreen
+        
         
 
-        navigationController?.pushViewController(pViewController, animated: true)
+        navigationController?.pushViewController(tabBar, animated: true)
         
         
     }

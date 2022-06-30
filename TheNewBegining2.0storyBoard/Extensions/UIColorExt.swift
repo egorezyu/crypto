@@ -11,4 +11,5 @@ extension UIColor{
     static var back = UIColor(named: "BackGround")
     static var backForCoin = UIColor(named: "BackForCoin")
     static var lineColor = UIColor(named: "LineColor")!
+    static var backForTabColor = UIColor(named: "BackForTabBar")!
 }
