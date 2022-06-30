@@ -25,6 +25,10 @@
 		E4CC0FB1286B677F007B190B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC0FB0286B677F007B190B /* String.swift */; };
 		E4CC0FB3286C9071007B190B /* PortfolioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC0FB2286C9071007B190B /* PortfolioViewController.swift */; };
 		E4CC0FB5286C9516007B190B /* CoinChooseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC0FB4286C9516007B190B /* CoinChooseView.swift */; };
+		E4CC0FB8286DAC16007B190B /* TheNewBeg.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E4CC0FB6286DAC16007B190B /* TheNewBeg.xcdatamodeld */; };
+		E4CC1003286DB826007B190B /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1001286DB826007B190B /* Expense+CoreDataClass.swift */; };
+		E4CC1004286DB826007B190B /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1002286DB826007B190B /* Expense+CoreDataProperties.swift */; };
+		E4CC1006286DBDCC007B190B /* PortfolioHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1005286DBDCC007B190B /* PortfolioHomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		E4CC0FB0286B677F007B190B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		E4CC0FB2286C9071007B190B /* PortfolioViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewController.swift; sourceTree = "<group>"; };
 		E4CC0FB4286C9516007B190B /* CoinChooseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinChooseView.swift; sourceTree = "<group>"; };
+		E4CC0FB7286DAC16007B190B /* TheNewBeg.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TheNewBeg.xcdatamodel; sourceTree = "<group>"; };
+		E4CC1001286DB826007B190B /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E4CC1002286DB826007B190B /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E4CC1005286DBDCC007B190B /* PortfolioHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioHomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +94,7 @@
 				E47D7DB8282832FD00A7C871 /* MainViewController.swift */,
 				E466A243285650DA00CA66DE /* CoinScreenViewController.swift */,
 				E4CC0FB2286C9071007B190B /* PortfolioViewController.swift */,
+				E4CC1005286DBDCC007B190B /* PortfolioHomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -109,6 +118,7 @@
 		E47D7DB3282832FD00A7C871 /* TheNewBegining2.0storyBoard */ = {
 			isa = PBXGroup;
 			children = (
+				E4CC1000286DB645007B190B /* ModelCoreData */,
 				E47D7DCE282D053400A7C871 /* Delegates */,
 				E47D7DCB282C0AED00A7C871 /* Models */,
 				E47D7DC8282C083200A7C871 /* Network */,
@@ -119,6 +129,7 @@
 				E466A23C2854ECFF00CA66DE /* Extensions */,
 				E47D7DBF282832FE00A7C871 /* LaunchScreen.storyboard */,
 				E47D7DC2282832FE00A7C871 /* Info.plist */,
+				E4CC0FB6286DAC16007B190B /* TheNewBeg.xcdatamodeld */,
 			);
 			path = TheNewBegining2.0storyBoard;
 			sourceTree = "<group>";
@@ -157,6 +168,15 @@
 				E4CC0FB4286C9516007B190B /* CoinChooseView.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		E4CC1000286DB645007B190B /* ModelCoreData */ = {
+			isa = PBXGroup;
+			children = (
+				E4CC1001286DB826007B190B /* Expense+CoreDataClass.swift */,
+				E4CC1002286DB826007B190B /* Expense+CoreDataProperties.swift */,
+			);
+			path = ModelCoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,9 +257,13 @@
 				E47D7DD1282D057500A7C871 /* CryptoCell.swift in Sources */,
 				E4CC0FB1286B677F007B190B /* String.swift in Sources */,
 				E4CC0FAF286B675E007B190B /* CoinDetailModel.swift in Sources */,
+				E4CC0FB8286DAC16007B190B /* TheNewBeg.xcdatamodeld in Sources */,
 				E47D7DB5282832FD00A7C871 /* AppDelegate.swift in Sources */,
+				E4CC1004286DB826007B190B /* Expense+CoreDataProperties.swift in Sources */,
+				E4CC1003286DB826007B190B /* Expense+CoreDataClass.swift in Sources */,
 				E466A244285650DA00CA66DE /* CoinScreenViewController.swift in Sources */,
 				E47D7DCD282C0B1500A7C871 /* Coin.swift in Sources */,
+				E4CC1006286DBDCC007B190B /* PortfolioHomeViewController.swift in Sources */,
 				E47BF47A2859F735008CA983 /* Date.swift in Sources */,
 				E47D7DB7282832FD00A7C871 /* SceneDelegate.swift in Sources */,
 				E47BF47828579275008CA983 /* UIColorExt.swift in Sources */,
@@ -452,6 +476,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E4CC0FB6286DAC16007B190B /* TheNewBeg.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E4CC0FB7286DAC16007B190B /* TheNewBeg.xcdatamodel */,
+			);
+			currentVersion = E4CC0FB7286DAC16007B190B /* TheNewBeg.xcdatamodel */;
+			path = TheNewBeg.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E47D7DA9282832FD00A7C871 /* Project object */;
 }

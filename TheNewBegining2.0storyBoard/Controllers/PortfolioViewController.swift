@@ -8,6 +8,7 @@
 import UIKit
 
 class PortfolioViewController: UIViewController {
+    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var images : [UIImage]!
     var coins : [Coin]!
     var arrOfCoinChoseViews : [CoinChooseView] = []
@@ -38,6 +39,7 @@ class PortfolioViewController: UIViewController {
         addCoinButton.layer.borderWidth = 3
         addCoinButton.layer.cornerRadius = 15
         addCoinButton.isHidden = true
+        addCoinButton.addTarget(self, action: #selector(addToCoreData(sender:)), for: .touchUpInside)
         view.addSubview(addCoinButton)
         textFieldForFiltering.placeholder = "Please enter the name of the currency"
         textFieldForFiltering.font = UIFont.boldSystemFont(ofSize: 20)
@@ -201,6 +203,38 @@ class PortfolioViewController: UIViewController {
             }
             
         }
+        
+    }
+    @objc func addToCoreData(sender : UIButton){
+        
+        
+        textFieldForAmount.text = ""
+        let chosenPrevElement = arrOfCoinChoseViews.first { coinChoseView in
+            coinChoseView.coin.name == currentChose
+        }
+        chosenPrevElement?.clearBorder()
+        let exp = Expense(context: self.context)
+        exp.name = currentChose
+        exp.amount = Int64(textFieldForAmount.text ?? "0") ?? 0
+        do{
+            try context.save()
+        }
+        catch{
+            print("couldnt save your data")
+        }
+        
+       
+        
+        
+        self.addCoinButton.isHidden = true
+        self.textFieldForAmount.isHidden = true
+        currentChose = ""
+       
+        
+        
+        
+    
+
         
     }
     
