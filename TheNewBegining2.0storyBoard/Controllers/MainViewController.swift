@@ -83,9 +83,11 @@ class MainViewController: UIViewController {
         
         pViewController.tabBarItem.image = UIImage(systemName: "plus")
         
-        let cont = UIViewController()
+        let cont = PortfolioHomeViewController()
         cont.title = "Home"
         cont.tabBarItem.image = UIImage(systemName: "house")
+        cont.coins = self.coins
+        cont.images = self.images
         let tabBar = UITabBarController()
         tabBar.tabBar.backgroundColor = .backForTabColor
         tabBar.tabBar.layer.cornerRadius = 25

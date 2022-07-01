@@ -208,13 +208,14 @@ class PortfolioViewController: UIViewController {
     @objc func addToCoreData(sender : UIButton){
         
         
-        textFieldForAmount.text = ""
+        
         let chosenPrevElement = arrOfCoinChoseViews.first { coinChoseView in
             coinChoseView.coin.name == currentChose
         }
         chosenPrevElement?.clearBorder()
         let exp = Expense(context: self.context)
         exp.name = currentChose
+        print(textFieldForAmount.text)
         exp.amount = Int64(textFieldForAmount.text ?? "0") ?? 0
         do{
             try context.save()
@@ -222,7 +223,9 @@ class PortfolioViewController: UIViewController {
         catch{
             print("couldnt save your data")
         }
+        textFieldForAmount.text = ""
         
+      
        
         
         

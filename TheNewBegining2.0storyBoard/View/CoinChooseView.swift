@@ -8,7 +8,7 @@
 import UIKit
 
 class CoinChooseView: UIControl {
-    private var imageView : UIImageView!
+    var imageView : UIImageView!
     var coin : Coin!
     override init(frame : CGRect){
         
